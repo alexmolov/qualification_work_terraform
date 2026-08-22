@@ -1,0 +1,1 @@
+# qualification_work_terraform
