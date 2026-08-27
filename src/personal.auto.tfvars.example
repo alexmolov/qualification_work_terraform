@@ -1,0 +1,7 @@
+cloud_id=
+folder_id=
+static_ip=
+ssh_public_key_path=
+ssh_private_key_path=
+#полный путь к файлу (не относительный)
+service_account_key_path=

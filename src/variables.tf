@@ -1,8 +1,8 @@
 ###cloud vars
-variable "token" {
-  type        = string
-  description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
-}
+# variable "token" {
+#   type        = string
+#   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
+# }
 
 variable "cloud_id" {
   type        = string
@@ -30,11 +30,13 @@ variable "common_boot_disk_config" {
 }
 
 variable "ssh_public_key_path" {
-  type        = string
-  default     = "~/.ssh/qual_vm_access.pub"
+  type  = string
 }
 
 variable "ssh_private_key_path" {
-  type        = string
-  default     = "~/.ssh/qual_vm_access"
+  type  = string
+}
+
+variable "service_account_key_path" {
+  type  = string
 }
