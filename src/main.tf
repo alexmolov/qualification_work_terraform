@@ -99,7 +99,7 @@ resource "null_resource" "install_python" {
     type        = "ssh"
     user        = "ubuntu"
     host        = yandex_compute_instance.web-vm[0].network_interface.0.nat_ip_address
-    private_key = file("~/.ssh/id_rsa")
+    private_key = file("${var.ssh_private_key_path}")
   }
 
   provisioner "remote-exec" {
@@ -120,10 +120,10 @@ resource "null_resource" "install_python" {
   }
 
   provisioner "local-exec" {
-    command = "ansible-galaxy install -r ./ansible/requirements.yml"
+    command = "cd ${path.module}/ansible && ansible-galaxy install -r requirements.yml"
   }
 
   provisioner "local-exec" {
-    command = "ansible-playbook -i ./inventory.ini ./ansible/site.yml --private-key ~/.ssh/id_rsa"
+    command = "cd ${path.module}/ansible && ansible-playbook -i ../inventory.ini site.yml --private-key ${var.ssh_private_key_path}"
   }
 }

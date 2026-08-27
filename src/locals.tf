@@ -1,5 +1,5 @@
 locals {
-  ssh_public_key = file("~/.ssh/id_rsa.pub")
+  ssh_public_key = file("${var.ssh_public_key_path}")
   
   common_metadata = {
     serial-port-enable = "true"

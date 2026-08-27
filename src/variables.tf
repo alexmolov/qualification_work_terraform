@@ -28,3 +28,13 @@ variable "common_boot_disk_config" {
     size = 15
   }
 }
+
+variable "ssh_public_key_path" {
+  type        = string
+  default     = "~/.ssh/qual_vm_access.pub"
+}
+
+variable "ssh_private_key_path" {
+  type        = string
+  default     = "~/.ssh/qual_vm_access"
+}
