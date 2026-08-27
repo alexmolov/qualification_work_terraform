@@ -1,0 +1,3 @@
+[submodule "src/ansible"]
+	path = src/ansible
+	url = git@github.com:alexmolov/qualification_work_ansible.git
