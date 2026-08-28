@@ -2,6 +2,7 @@ variable "vm_platform_id" {
   type        = string
   default     = "standard-v2"
 }
+
 variable "vm_resources" {
   type = object({
     cores         = number
